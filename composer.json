@@ -1,0 +1,32 @@
+{
+    "name": "prodbat/prodbat",
+    "description": "Monitoring for apps built with AI: server errors, logs, scheduled jobs and queues, reported to Prodbat. Laravel and plain PHP.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["monitoring", "error-tracking", "laravel", "uptime", "logs"],
+    "homepage": "https://github.com/prodbat/prodbat",
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*"
+    },
+    "suggest": {
+        "ext-curl": "Sends reports with curl; without it, PHP streams are used."
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {"Prodbat\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Prodbat\\Tests\\": "tests/"}
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["Prodbat\\Laravel\\ProdbatServiceProvider"]
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests"
+    }
+}
